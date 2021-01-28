@@ -1,17 +1,17 @@
 var request = new XMLHttpRequest();
 request.open(
-    'GET',
-    'http://learn.api.axenov-it.com/users');
+    'GET', 
+    'http://learn.api.axenov-it.com/users'); // отправляем запрос
 request.send();
-var container_div = document.querySelector('.container');
+var container_div = document.querySelector('.container'); // доступ к блоку в который вставляем шаблон из js
 
 
-function data() {
+function data() {  // функция которая сработает после загрузки данных с сервера
     function insert() {
-        users = JSON.parse(request.response);
-        var html = '';
-        var num = 1;
-        for (var user of users) {
+        users = JSON.parse(request.response); // преобразование строки в объекты
+        var html = ''; // переменная для шаблона
+        var num = 1; // счетчик для порядка элементов
+        for (var user of users) { // функция для хтмл скилета
             html += `<div class="container__hide">
                <span class="container__short__num">${num}</span>
                <span "container__short__name">${user.name}</span>
@@ -68,25 +68,30 @@ function data() {
                </div>`;
             num++;
         }
-        console.dir(user.phones);
-        container_div.innerHTML = html;
+        
+        container_div.innerHTML = html; // вставляем скилет в хтмл страницу
     }
     insert();
-    var container_btn = document.querySelectorAll('.container__short__btn');
-    console.dir (container_btn);
-    for (getBtn of container_btn) {
+
+    var container_btn = document.querySelectorAll('.container__short__btn'); // доступ  к кнопе
+
+    for (getBtn of container_btn) { // повесить функцию на каждую кнопку
         getBtn.onclick = btns;
         }
-        function btns () {
-            var parent = this.parentElement;
-            var nextElement = parent.nextElementSibling;
-            if (nextElement.className=='hide'){
+
+        function btns () { // функция на онклик
+
+            var parent = this.parentElement; // доступ к родительскому элементу
+            var nextElement = parent.nextElementSibling; // доступ к следующему элументу после 
+                                                        //родителя (блок который нужно вывести)
+            if (nextElement.className=='hide'){ // при нажатии сравнение класса и изменение 
+                                                //его на противоположный (показать / скрыть)
                 nextElement.className='show';
             }
             else {
                 nextElement.className='hide';
             }
-            if (this.innerText == 'show'){
+            if (this.innerText == 'show'){ // замена текста кнопки
                 this.innerText = 'hide';
                 parent.className ='container__hide__color';
             }
