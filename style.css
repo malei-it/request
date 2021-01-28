@@ -1,0 +1,67 @@
+p {
+    margin: 5px 0;
+}
+.container {
+    display:flex;
+    flex-direction: column;
+    width: 600px;
+    margin: auto;
+}
+
+.container__hide {
+   
+    display: flex;
+    justify-content: space-between;
+    width: 300px;
+    background: wheat;
+    width: 450px;
+    border: 1px solid;
+    border-radius: 3px;
+    margin-bottom: 5px;
+}
+.container__hide__color {
+   
+    display: flex;
+    justify-content: space-between;
+    width: 300px;
+    background: #95f0f2;
+    width: 450px;
+    border: 1px solid;
+    border-radius: 3px;
+    margin-bottom: 5px;
+}
+.hide{
+    display: none;
+    
+}
+.img {
+    max-width: 100%;
+    border-radius: 50%;
+}
+.show {
+    background: #95f0f2;
+    margin: 5px 0;
+    border: 1px solid black;
+    border-radius: 5px;
+    padding: 5px;
+    display: flex;
+}
+.show__name {
+    text-align: center;
+}
+.show__info {
+    display: flex;
+    justify-content: space-between;
+    margin: 0 15px 0 15px;
+}
+.companies {
+    margin-left: 15px;
+}
+
+.show__phones {
+    display: flex;
+    flex-direction: column;
+}
+.container__img{
+    max-width: 30%;
+}
